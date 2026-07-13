@@ -257,8 +257,8 @@ float LayoutDetails::GetShrinkToFitWidth(Element* element, Vector2f containing_b
 
 	if (!element->IsReplaced() && (display == Style::Display::Flex || display == Style::Display::InlineFlex))
 	{
-		// A formatted flex container determines its shrink-to-fit width from its max-content size, so we measure that
-		// directly instead of formatting the element first, which would simply repeat the same measurement.
+		// A formatted flex container determines its shrink-to-fit width from its max-content size, so measure that
+		// directly instead of formatting the element first, which would repeat the same measurement.
 		shrink_to_fit_width = ClampToAvailableWidth(FlexFormattingContext::GetMaxContentSize(element).x);
 	}
 	else

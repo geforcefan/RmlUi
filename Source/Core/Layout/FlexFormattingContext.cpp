@@ -218,8 +218,7 @@ static float GetInnerUsedCrossSize(const FlexItem& item)
 	return Math::Max(item.used_cross_size - item.cross.sum_edges, 0.f);
 }
 
-// Formats the element as a block box to determine its content height, memoized on the definite content width of the
-// measure box for the duration of the layout pass.
+// Formats the element as a block box to determine its content height, memoized on the content width of the measure box.
 static float GetFormattedContentHeight(ContainerBox* parent_container, Element* element, const Box* measure_box)
 {
 	const float content_width = (measure_box ? measure_box->GetSize().x : -1.f);
